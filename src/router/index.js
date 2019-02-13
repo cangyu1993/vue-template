@@ -7,6 +7,7 @@ Vue.use(Router)
 const components ={
   login:()=>import('@/views/login'),
   allPages:()=>import('@/views/allPages'),
+  unknow:()=>import('@/views/404'),
 }
 
 export default new Router({
@@ -32,6 +33,11 @@ export default new Router({
       //     component:components.control
       //   },
       // ]
+    },
+    {
+      path: '*',
+      name: '404',
+      component:components.unknow
     },
   ]
 })
